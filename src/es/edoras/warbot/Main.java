@@ -14,33 +14,34 @@ public class Main implements ValoresPredefinidos {
     public static void main(String[] args) throws FileNotFoundException {
 
         //PrintWriter pw = new PrintWriter(new File("Tweets.txt"));
+
         String pw = "";
 
         Comunidad c = new Comunidad();
         rellenarComunidad(c);
 
-        pw += "¡La guerra Edorina está a punto de empezar!\n\nNúmero de participantes: " + nombres.length + " Edorinxs\n\n#EdorasHueleASangre";
+        //pw += "¡La guerra Edorina está a punto de empezar!\n\nNúmero de participantes: " + nombres.length + " Edorinxs\n\n#EdorasHueleASangre";
         //pw += "Participantes: "+c.listadoVivos()+"\n";
 
-        try{
-            updateStatus(getTwitterInstance(), pw);
-        } catch (TwitterException e) {
-            e.printStackTrace();
-        }
-        pw = "";
+        //try{
+        //    updateStatus(getTwitterInstance(), pw);
+        //} catch (TwitterException e) {
+        //    e.printStackTrace();
+        //}
+        //pw = "";
 
-        try {
-            Thread.sleep(300000);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        //try {
+        //    Thread.sleep(300000);
+        //} catch (Exception e) {
+        //    e.printStackTrace();
+        //}
 
         for(int i = 0; i < nombres.length && nombres.length - c.getnMuertos() > 1; i++) {
             for(int j = 0; j < 12; j++) {
                 pw += imprimirFecha();
                 pw += c.matar(c.getVPersonas()[c.encontrarVivo()], c.getVPersonas()[c.encontrarVivo()]);
                 if(nombres.length - c.getnMuertos() != 1) {
-                    pw += nombres.length - c.getnMuertos() + " personas vivas.\n";
+                    pw += nombres.length - c.getnMuertos() + " Edorinxs restantes.\n";
                     //pw += "Vivos: "+c.listadoVivos() + "\n";
                 } else
                     pw += "GANADOR: "+c.listadoVivos() + "\n";
