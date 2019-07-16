@@ -1,4 +1,4 @@
-// Desarrollador: Sergio Jim�nez R.
+// Desarrollador: Sergio Jiménez R.
 package es.edoras.warbot;
 
 import java.io.FileNotFoundException;
@@ -49,6 +49,7 @@ public class Comunidad implements ValoresPredefinidos {
 		if(pv.getNombre() == pm.getNombre()){
 			return pv.getNombre() + " vió la situación demasiado cruda y se ha suicidado.\n";
 		} else {
+			SendRcon.SendCommand(pv.getNombre(), pm.getNombre());
 			return pv.getNombre() + " ha matado a " + pm.getNombre() + ".\n";
 		}
 	}
