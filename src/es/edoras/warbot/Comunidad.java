@@ -24,7 +24,7 @@ public class Comunidad implements ValoresPredefinidos {
 		}
 	}
 	
-	private int encontrarVivo() {
+	public int encontrarVivo() {
 		int[] vivos = new int[vpersonas.length - nMuertos];
 		for(int i = 0, pVivo = 0; i < vpersonas.length && pVivo < vivos.length; i++) {
 			if(vpersonas[i].getVivo()) {
